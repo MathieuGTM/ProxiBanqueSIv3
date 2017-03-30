@@ -5,15 +5,69 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Opération Conseiller</title>
+<title>Opération Client</title>
 </head>
 
 <h:body>
 	<div style="margin-left: 20px; margin-top: 15px;">
 		<h2>ProxiBanqueSI version 3</h2>
 	</div>
+	<div style="margin-left: 20px;">
+		<p>Bonjour Tintin, voici votre liste de clients, que voulez vous
+			faire ?</p>
+	</div>
+	<h:form>
+		<div style="margin-top: 10px; margin-left: 20px;">
+			<h:commandButton action="add-client?faces-redirect=true"
+				value="Ajouter Client" />
+		</div>
+		<h:dataTable value="#{clientController.clients}" var="tempClient"
+					styleClass="demo-table" headerClass="demo-table-header"
+					rowClasses="demo-table-odd-row,demo-table-even-row">
 
-<h1>Yo</h1>
+					<h:column>
+						<!-- the column header -->
+						<f:facet name="header">First Name</f:facet>
+
+						<!--  the value for each row -->
+						<h:outputText value="#{tempStudent.firstName}"></h:outputText>
+					</h:column>
+
+					<h:column>
+						<!-- the column header -->
+						<f:facet name="header">Last Name</f:facet>
+
+						<!--  the value for each row -->
+						<h:outputText value="#{tempStudent.lastName}"></h:outputText>
+
+					</h:column>
+
+					<h:column>
+						<!-- the column header -->
+						<f:facet name="header">Email</f:facet>
+
+						<!--  the value for each row -->
+						<h:outputText value="#{tempStudent.email}"></h:outputText>
+
+					</h:column>
+
+					<h:column>
+						<!-- the column header -->
+						<f:facet name="header">Action</f:facet>
+
+						<!--  the value for each row -->
+						<h:commandLink value="Update"
+							action="#{studentController.loadStudent(tempStudent.id)}" />
+					|
+
+					<h:commandLink value="Delete"
+							onclick="if (!confirm('Are you sure you want to delete this student?')) return false"
+							action="#{studentController.deleteStudent(tempStudent.id)}" />
+
+					</h:column>
+
+				</h:dataTable>
+	</h:form>
 
 </h:body>
 </html>
