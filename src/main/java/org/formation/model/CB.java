@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class CB {
@@ -12,7 +13,10 @@ public class CB {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private TypeCB typeCB;
-
+	
+	
+	@OneToOne(mappedBy="cb")
+	private Client client;
 
 
 	public CB(TypeCB typeCB) {

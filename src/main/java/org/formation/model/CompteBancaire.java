@@ -2,12 +2,28 @@ package org.formation.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
+
+@Entity
+@Inheritance(strategy= InheritanceType.JOINED)
 public abstract class CompteBancaire {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private Long id;
 	private Date dateCreation;
 	private double solde = 0.0;
-	private CB cb;
+	
+
 	
 	
 	
@@ -22,19 +38,12 @@ public abstract class CompteBancaire {
 		super();
 		this.dateCreation =  new Date();
 		this.solde = solde;
-		this.cb = cb;
 	}
 	public double getSolde() {
 		return solde;
 	}
 	public void setSolde(double solde) {
 		this.solde = solde;
-	}
-	public CB getCb() {
-		return cb;
-	}
-	public void setCb(CB cb) {
-		this.cb = cb;
 	}
 	public Long getId() {
 		return id;

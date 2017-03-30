@@ -1,23 +1,23 @@
 package org.formation.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class CompteCourant extends CompteBancaire {
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+
 	private double decouvert = 1000.0;
 
+	@OneToOne(mappedBy="compteCourant")
+	private Client client;
 	 
 	
+
+
 	@Override
 	public String toString() {
-		return "CompteCourant [decouvert=" + decouvert + "]";
+		return "CompteCourant [decouvert=" + decouvert + ", client=" + client + "]";
 	}
 
 	public CompteCourant(double decouvert) {
@@ -37,9 +37,13 @@ public class CompteCourant extends CompteBancaire {
 		this.decouvert = decouvert;
 	}
 
-	public Long getId() {
-		return id;
+	public Client getClient() {
+		return client;
 	}
-	
-	
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+
 }

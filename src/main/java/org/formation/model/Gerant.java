@@ -18,21 +18,21 @@ public class Gerant extends Personne {
 	public Gerant() {
 		super();
 	}
-//	public Gerant(Agence agence) {
-//		super();
-//		this.agence = agence;
-//	}
-//	public Agence getAgence() {
-//		return agence;
-//	}
-//	public void setAgence(Agence agence) {
-//		this.agence = agence;
-//	}
+	public Gerant(Agence agence) {
+		super();
+		this.agence = agence;
+	}
+	public Agence getAgence() {
+		return agence;
+	}
+	public void setAgence(Agence agence) {
+		this.agence = agence;
+	}
 
-//	@Override
-//	public String toString() {
-//		return "Gerant [agence=" + agence + "]";
-//	}
+	@Override
+	public String toString() {
+		return "Gerant [agence=" + agence + "]";
+	}
 	
 	
 	
