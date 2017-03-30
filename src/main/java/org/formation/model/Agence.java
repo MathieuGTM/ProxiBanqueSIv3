@@ -6,6 +6,7 @@ import java.util.Date;
 public class Agence {
 
 	private Long id;
+	private String numAgence;
 	private Date dateCreation;
 	private Gerant gerant;
 	private Adresse adresse;
@@ -47,6 +48,14 @@ public class Agence {
 	}
 	public Date getDateCreation() {
 		return dateCreation;
+	}
+	
+	
+	public String getNumAgence() {
+		return numAgence;
+	}
+	public void setNumAgence(String numAgence) {
+		this.numAgence = numAgence;
 	}
 	@Override
 	public String toString() {
