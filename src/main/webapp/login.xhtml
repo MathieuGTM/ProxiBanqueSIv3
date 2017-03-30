@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
+<title>Login</title>
 </head>
-<body>
-
-</body>
+<h:body>
+	<center>
+		<div align="center" style="width: 200px;">
+			<form action="j_security_check" method="post">
+				<fieldset>
+					<legend>Connectez vous : </legend>
+					<div align="center">
+						<label>Identifiant</label> <input name="j_username" />
+					</div>
+					<div align="center">
+						<label>Mot de passe</label> <input type="password"
+							name="j_password"></input>
+					</div>
+					<div align="right" style="margin-top: 10px;">
+						<button type="submit">Valider</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</center>
+</h:body>
 </html>
