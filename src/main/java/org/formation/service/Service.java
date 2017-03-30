@@ -2,47 +2,44 @@ package org.formation.service;
 
 import java.util.List;
 
+import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import org.formation.dao.IDao;
 
 
-@Named
-public class Service implements IService {
+@Dependent
+public class Service<T> implements IService<T> {
 
-	
 	@Inject
-	IDao dao;
+	IDao<T> dao;
+
+
+	public void create(T t) {
+		// TODO Auto-generated method stub
+		dao.create(t);
+	}
+
+
+	public void delete(Class<T> t, long id) {
+		// TODO Auto-generated method stub
+		dao.delete(t, id);
+	}
+
 	
-	@Override
-	public void delete(Class t, long id) {
-		// TODO Auto-generated method stub
-		
+	public void update(Class<T> t) {
+		dao.update(t);
 	}
 
-	@Override
-	public void create(Object t) {
-		// TODO Auto-generated method stub
-		
+	public List<T> selectAll(Class<T> t, String table) {
+
+		return dao.selectAll(t,table);
 	}
 
-	@Override
-	public Object select(Class t, long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
+	public T select(Class<T> t, long id) {
 
-	@Override
-	public List selectAll(Class t, String table) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void update(Class t) {
-		// TODO Auto-generated method stub
-		
+		return dao.select(t, id);
 	}
 
 }
