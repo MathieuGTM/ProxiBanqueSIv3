@@ -11,6 +11,7 @@
 	<class>org.formation.model.Agence</class>
 	<class>org.formation.model.CB</class>
 	<class>org.formation.model.Conseiller</class>
+	<class>org.formation.model.CompteBancaire</class>
 	<class>org.formation.model.CompteCourant</class>
 	<class>org.formation.model.CompteEpargne</class>
 	
