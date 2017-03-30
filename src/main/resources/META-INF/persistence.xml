@@ -4,7 +4,17 @@
 	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
 	<persistence-unit name="my-pu" transaction-type="RESOURCE_LOCAL">
-<!-- 	<class>org.formation.entity.client</class> -->
+	<class>org.formation.model.Personne</class>
+	<class>org.formation.model.Client</class>
+	<class>org.formation.model.Adresse</class>
+	<class>org.formation.model.Gerant</class>
+	<class>org.formation.model.Agence</class>
+	<class>org.formation.model.CB</class>
+	<class>org.formation.model.Conseiller</class>
+	<class>org.formation.model.CompteCourant</class>
+	<class>org.formation.model.CompteEpargne</class>
+	
+	
 	
 	
 		<properties>

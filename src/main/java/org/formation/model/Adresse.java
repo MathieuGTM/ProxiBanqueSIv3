@@ -1,5 +1,8 @@
 package org.formation.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Adresse {
 
 	private String rue, codePostal, ville;
