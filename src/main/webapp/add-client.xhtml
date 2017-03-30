@@ -1,11 +1,74 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
 
-</body>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Création d'un compte client</title>
+</head>
+
+<h:body>
+	<div style="margin-left: 20px; margin-top: 15px;">
+		<h2>ProxiBanqueSI version 3</h2>
+	</div>
+	<div style="margin-left: 20px;">
+		<p>Bonjour Tintin, veuillez renseigner les informations du nouveau
+			client :</p>
+	</div>
+	<center>
+
+
+
+		<h:messages errorStyle="" />
+		
+		<h:form>
+			<h:form id="form" style="margin-top: 10px;">
+				<h:panelGrid columns="3">
+
+					<h:outputLabel>Nom :</h:outputLabel>
+					<h:inputText value="#{client.nom}" id="nom" required="true"
+						requiredMessage="Votre nom est obligatoire." />
+					<h:message for="nom" />
+
+					<h:outputLabel>Prénom :</h:outputLabel>
+					<h:inputText value="#{client.prenom}" id="prenom" required="true"
+						requiredMessage="Votre prénom est obligatoire." />
+					<h:message for="prenom" />
+
+					<h:outputLabel>Adresse (Rue) :</h:outputLabel>
+					<h:inputText value="#{client.adresse.rue}" id="rue" />
+					<h:message for="rue" />
+
+
+					<h:outputLabel>Code Postal :</h:outputLabel>
+					<h:inputText value="#{client.adresse.codePostal}" id="codePostal" />
+					<h:message for="codePostal" />
+
+					<h:outputLabel>Ville :</h:outputLabel>
+					<h:inputText value="#{client.adresse.ville}" id="ville" />
+					<h:message for="ville" />
+
+
+					<h:outputLabel>Telephone :</h:outputLabel>
+					<h:inputText value="#{client.telephone}" id="telephone" />
+					<h:message for="telephone" />
+
+				</h:panelGrid>
+
+
+				<br />
+				<br />
+				<h:commandButton action="list-clients?faces-redirect=true"
+					value="Valider" />
+			</h:form>
+
+
+			<h:commandButton action="list-clients?faces-redirect=true"
+				value="Annuler" />
+
+
+		</h:form>
+	</center>
+</h:body>
 </html>

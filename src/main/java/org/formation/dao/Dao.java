@@ -9,10 +9,31 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import org.formation.model.Client;
+
 @Named
 public class Dao<T> implements IDao<T>{
 
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");
+
+
+
+	public void create(T t) {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction etxn = em.getTransaction();
+		try {
+			etxn.begin();
+			em.persist(t);
+			etxn.commit();
+		} catch (Exception e) {
+			if (etxn != null)
+				etxn.rollback();
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		
+	}
 
 
 	
@@ -38,24 +59,27 @@ public class Dao<T> implements IDao<T>{
 	}
 
 
-	public void create(T t) {
+
+	public void update(Class<T> t) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
+
 		try {
 			etxn.begin();
-			em.persist(t);
+			em.merge(t);
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
 				etxn.rollback();
-		} finally {
+			System.out.println(e.getMessage());
+			
+		}finally {
 			if (em != null)
 				em.close();
 		}
 		
 	}
-
-
+	
 	public T select(Class<T> t, long id) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
@@ -103,23 +127,31 @@ public class Dao<T> implements IDao<T>{
 	}
 
 
-	public void update(Class<T> t) {
+
+	@Override
+	public List<Client> selectAll() {
+		
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
-
+		List<Client> list = null ;
+		String sql = "SELECT c FROM Client c ";
+        
 		try {
 			etxn.begin();
-			em.merge(t);
+			TypedQuery<Client> query = em.createQuery(sql, Client.class);
+			list = query.getResultList();
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
 				etxn.rollback();
 			System.out.println(e.getMessage());
 			
-		}finally {
+		} finally {
 			if (em != null)
 				em.close();
 		}
+		return list;
 		
 	}
+
 }
