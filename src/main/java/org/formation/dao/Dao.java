@@ -104,7 +104,6 @@ public class Dao<T> implements IDao<T>{
 
 
 	public void update(Class<T> t) {
-		// TODO Auto-generated method stub
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
 
