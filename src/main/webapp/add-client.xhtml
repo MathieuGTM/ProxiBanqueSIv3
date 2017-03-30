@@ -36,31 +36,34 @@
 						requiredMessage="Votre prénom est obligatoire." />
 					<h:message for="prenom" />
 
-					<h:outputLabel>Adresse (Rue) :</h:outputLabel>
-					<h:inputText value="#{client.adresse.rue}" id="rue" />
-					<h:message for="rue" />
+<!-- 					<h:outputLabel>Adresse (Rue) :</h:outputLabel> -->
+<!-- 					<h:inputText value="#{client.adresse.rue}" id="rue" /> -->
+<!-- 					<h:message for="rue" /> -->
 
 
-					<h:outputLabel>Code Postal :</h:outputLabel>
-					<h:inputText value="#{client.adresse.codePostal}" id="codePostal" />
-					<h:message for="codePostal" />
+<!-- 					<h:outputLabel>Code Postal :</h:outputLabel> -->
+<!-- 					<h:inputText value="#{client.adresse.codePostal}" id="codePostal" /> -->
+<!-- 					<h:message for="codePostal" /> -->
 
-					<h:outputLabel>Ville :</h:outputLabel>
-					<h:inputText value="#{client.adresse.ville}" id="ville" />
-					<h:message for="ville" />
+<!-- 					<h:outputLabel>Ville :</h:outputLabel> -->
+<!-- 					<h:inputText value="#{client.adresse.ville}" id="ville" /> -->
+<!-- 					<h:message for="ville" /> -->
 
 
-					<h:outputLabel>Telephone :</h:outputLabel>
-					<h:inputText value="#{client.telephone}" id="telephone" />
-					<h:message for="telephone" />
+<!-- 					<h:outputLabel>Telephone :</h:outputLabel> -->
+<!-- 					<h:inputText value="#{client.telephone}" id="telephone" /> -->
+<!-- 					<h:message for="telephone" /> -->
+
+
+
+
 
 				</h:panelGrid>
 
 
 				<br />
 				<br />
-				<h:commandButton action="list-clients?faces-redirect=true"
-					value="Valider" />
+				<h:commandButton action="#{clientController.addClient(client)}"	value="Valider" />
 			</h:form>
 
 

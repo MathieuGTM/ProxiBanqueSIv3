@@ -4,12 +4,13 @@ import java.util.List;
 
 import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.formation.dao.IDao;
 import org.formation.model.Client;
 
 
-@Dependent
+@Named
 public class Service<T> implements IService<T> {
 
 	@Inject
@@ -36,15 +37,15 @@ public class Service<T> implements IService<T> {
 	}
 
 
-	public List<T> selectAll(Class<T> t, String table) {
-
-		return dao.selectAll(t,table);
-	}
+//	public List<T> selectAll(Class<T> t, String table) {
+//
+//		return dao.selectAll(t,table);
+//	}
 
 
 	@Override
 	public List<Client> selectAll() {
-		return dao.selectAll();
+		return dao.getClients();
 	}
 
 	

@@ -2,6 +2,7 @@ package org.formation.model;
 
 import java.io.Serializable;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -13,14 +14,26 @@ import javax.persistence.OneToOne;
  *
  */
 @Entity
+@ManagedBean(name="client")
 public class Client extends Personne implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
 	
+	private String nom2;
+	
+	public String getNom2() {
+		return nom2;
+	}
+
+	public void setNom2(String nom2) {
+		this.nom2 = nom2;
+	}
+
+
+
 	@Embedded
 	private Adresse adresse;
 	private boolean clientFortune;

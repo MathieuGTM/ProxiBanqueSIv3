@@ -1,5 +1,6 @@
 package org.formation.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Named;
@@ -103,37 +104,37 @@ public class Dao<T> implements IDao<T>{
 	}
 
 
-	public List<T> selectAll(Class<T> t,String table) {
-		EntityManager em = emf.createEntityManager();
-		EntityTransaction etxn = em.getTransaction();
-		List<T> list = null ;
-		String sql = "SELECT c FROM "+ table+" c ";
-        
-		try {
-			etxn.begin();
-			TypedQuery<T> query = em.createQuery(sql, t);
-			list = query.getResultList();
-			etxn.commit();
-		} catch (Exception e) {
-			if (etxn != null)
-				etxn.rollback();
-			System.out.println(e.getMessage());
-			
-		} finally {
-			if (em != null)
-				em.close();
-		}
-		return list;
-	}
+//	public List<T> selectAll(Class<T> t,String table) {
+//		EntityManager em = emf.createEntityManager();
+//		EntityTransaction etxn = em.getTransaction();
+//		List<T> list = null ;
+//		String sql = "SELECT c FROM "+ table+" c ";
+//        
+//		try {
+//			etxn.begin();
+//			TypedQuery<T> query = em.createQuery(sql, t);
+//			list = query.getResultList();
+//			etxn.commit();
+//		} catch (Exception e) {
+//			if (etxn != null)
+//				etxn.rollback();
+//			System.out.println(e.getMessage());
+//			
+//		} finally {
+//			if (em != null)
+//				em.close();
+//		}
+//		return list;
+//	}
 
 
 
 	@Override
-	public List<Client> selectAll() {
+	public List<Client> getClients()  {
 		
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
-		List<Client> list = null ;
+		List<Client> list = new ArrayList<>() ;
 		String sql = "SELECT c FROM Client c ";
         
 		try {
@@ -144,7 +145,7 @@ public class Dao<T> implements IDao<T>{
 		} catch (Exception e) {
 			if (etxn != null)
 				etxn.rollback();
-			System.out.println(e.getMessage());
+			//System.out.println(e.getMessage());
 			
 		} finally {
 			if (em != null)
@@ -153,5 +154,8 @@ public class Dao<T> implements IDao<T>{
 		return list;
 		
 	}
+	
+
+	
 
 }

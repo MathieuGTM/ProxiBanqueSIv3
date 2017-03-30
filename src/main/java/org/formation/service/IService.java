@@ -11,7 +11,7 @@ public interface IService<T> {
 	public void update(Class<T> t);
 	public T select(Class<T> t, long id);
 	public List<Client> selectAll();
-	public List<T> selectAll(Class<T> t, String table);
+//	public List<T> selectAll(Class<T> t, String table);
 	
 	
 }
