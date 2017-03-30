@@ -6,7 +6,7 @@ public abstract class CompteBancaire {
 
 	private Long id;
 	private Date dateCreation;
-	private double solde;
+	private double solde = 0.0;
 	private CB cb;
 	
 	
@@ -20,7 +20,7 @@ public abstract class CompteBancaire {
 	}
 	public CompteBancaire(Date dateCreation, double solde, CB cb) {
 		super();
-		this.dateCreation = dateCreation;
+		this.dateCreation =  new Date();
 		this.solde = solde;
 		this.cb = cb;
 	}
