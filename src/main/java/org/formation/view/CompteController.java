@@ -13,7 +13,9 @@ import javax.inject.Named;
 
 import org.formation.model.Client;
 import org.formation.model.CompteBancaire;
-import org.formation.service.IService;
+import org.formation.model.CompteCourant;
+import org.formation.model.CompteEpargne;
+import org.formation.service.IServiceCompte;
 
 
 /**
@@ -32,64 +34,90 @@ public class CompteController implements Serializable {
 
 	private Logger logger = Logger.getLogger(getClass().getName());
 
-	private List<CompteBancaire> comptes;
+	private List<CompteCourant> comptesCourant;
 	
+	private List<CompteEpargne> comptesEpargne;
+
 	
 	@Inject
-	IService<CompteBancaire> service;
+	IServiceCompte service;
 	
 	public CompteController() throws Exception {
-		comptes = new ArrayList<>();
-	
+		comptesCourant = new ArrayList<>();
+		comptesCourant.add(new CompteCourant(10000, null, 1000, new Client("Paul", "Roger", "0102030405")));
+		comptesEpargne= new ArrayList<>();
 	}
 	
 	
-	public String addCompte(CompteBancaire compte) {
+//	public String addCompte(CompteBancaire compte) {
+//
+//		logger.info("Ajout du compte : " + compte);
+//
+//		try {
+//
+//			service.create(compte);
+//
+//		} catch (Exception exc) {
+//			// send this to server logs
+//			logger.log(Level.SEVERE, "Error adding compte", exc);
+//			
+//			// add error message for JSF page
+//			addErrorMessage(exc);
+//
+//			return "";
+//		}
+//
+//		return "list-clients?faces-redirect=true";
+//	}
+	
+	public List<CompteCourant> getComptesCourant() {
+		loadComptesCourant();
+		return comptesCourant;
+	}
+	
+	public void loadComptesCourant() {
 
-		logger.info("Ajout du compte : " + compte);
+		logger.info("Loading comptes courants");
+
+		comptesCourant.clear();
 
 		try {
 
-			service.create(compte);
+			comptesCourant = service.getCCs();
 
 		} catch (Exception exc) {
 			// send this to server logs
-			logger.log(Level.SEVERE, "Error adding compte", exc);
-			
+			logger.log(Level.SEVERE, "Error ", exc);
+
 			// add error message for JSF page
 			addErrorMessage(exc);
-
-			return "";
 		}
-
-		return "list-clients?faces-redirect=true";
 	}
 	
-	public List<CompteBancaire> getComptes() {
-		loadComptes();
-		return comptes;
+	public List<CompteEpargne> getComptesEpargne() {
+		loadComptesEpargne();
+		return comptesEpargne;
 	}
 	
-	public void loadComptes() {
+	public void loadComptesEpargne() {
 
-		logger.info("Loading comptes");
+		logger.info("Loading comptes epargne");
 
-		comptes.clear();
+		comptesEpargne.clear();
 
 		try {
 
-			comptes = service.selectAll();
+			comptesEpargne = service.getCEs();
 
 		} catch (Exception exc) {
 			// send this to server logs
-			logger.log(Level.SEVERE, "Error loading students", exc);
+			logger.log(Level.SEVERE, "Error ", exc);
 
 			// add error message for JSF page
 			addErrorMessage(exc);
 		}
 	}
 	
-
 
 	
 	private void addErrorMessage(Exception exc) {
