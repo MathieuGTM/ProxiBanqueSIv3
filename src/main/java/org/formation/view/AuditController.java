@@ -6,10 +6,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+
 import org.formation.model.CompteCourant;
 import org.formation.model.TypeClient;
 import org.formation.service.IService;
@@ -31,12 +30,12 @@ public class AuditController implements Serializable {
 	}
 	
 	
-	public int auditComptesCourant() {
+	public String auditComptesCourant() {
 
 		logger.info("Loading comptes courant");
 
 		ccs.clear();
-		int i=0;
+		Integer i=0;
 		
 		try {
 			
@@ -53,7 +52,7 @@ public class AuditController implements Serializable {
 				}else{}
 				
 			}
-
+			System.out.println(i+"!!!!!!!!!!!!!!");
 		} catch (Exception exc) {
 			// send this to server logs
 			logger.log(Level.SEVERE, "Error comptes courant", exc);
@@ -61,7 +60,7 @@ public class AuditController implements Serializable {
 			// add error message for JSF page
 		//	addErrorMessage(exc);
 		}
-		return i;
+		return i.toString();
 	}
 
 }

@@ -2,16 +2,13 @@ package org.formation.model;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-import javax.persistence.JoinColumn;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
 
 
 /**
@@ -22,6 +19,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy= InheritanceType.JOINED)
+@ManagedBean
 public abstract class CompteBancaire {
 
 	@Id

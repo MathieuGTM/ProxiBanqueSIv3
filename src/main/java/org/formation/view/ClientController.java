@@ -7,6 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.component.UIData;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -31,9 +32,20 @@ public class ClientController implements Serializable {
 
 	private List<Client> clients;
 	
-	
+
 	@Inject
 	IService<Client> service;
+	
+private UIData dataTable;
+
+	
+	public UIData getDataTable() {
+		return dataTable;
+	}
+
+	public void setDataTable(UIData dataTable) {
+		this.dataTable = dataTable;
+	}
 	
 	public ClientController() throws Exception {
 		clients = new ArrayList<>();
@@ -46,8 +58,9 @@ public class ClientController implements Serializable {
 		logger.info("Adding client : " + client);
 
 		try {
-
-			service.create(client);
+			if (clients.size()<=10) {
+				service.create(client);
+			}
 
 		} catch (Exception exc) {
 			// send this to server logs
@@ -75,7 +88,7 @@ public class ClientController implements Serializable {
 
 		try {
 
-			clients = service.selectAll();
+			clients = service.selectAllT(Client.class, "Client");
 
 		} catch (Exception exc) {
 			// send this to server logs

@@ -1,5 +1,6 @@
 package org.formation.model;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -10,6 +11,7 @@ import javax.persistence.OneToOne;
  */
 
 @Entity
+@ManagedBean(name="cc")
 public class CompteCourant extends CompteBancaire {
 
 
