@@ -39,7 +39,7 @@ public abstract class CompteBancaire {
 	public CompteBancaire() {
 		super();
 	}
-	public CompteBancaire(Date dateCreation, double solde, CB cb) {
+	public CompteBancaire(double solde, CB cb) {
 		super();
 		this.dateCreation =  new Date();
 		this.solde = solde;

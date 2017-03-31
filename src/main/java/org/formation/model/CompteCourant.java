@@ -1,5 +1,7 @@
 package org.formation.model;
 
+import java.util.Date;
+
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -27,6 +29,14 @@ public class CompteCourant extends CompteBancaire {
 	public String toString() {
 		return "CompteCourant [decouvert=" + decouvert + ", client=" + client + "]";
 	}
+
+	
+	public CompteCourant(double solde, CB cb, double decouvert, Client client) {
+		super(solde, cb);
+		this.decouvert = decouvert;
+		this.client = client;
+	}
+
 
 	public CompteCourant(double decouvert) {
 		super();
