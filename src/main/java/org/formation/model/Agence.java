@@ -46,7 +46,7 @@ public class Agence {
 		super();
 	}
 
-	public Agence(String numAgence, Date dateCreation, Gerant gerant, Adresse adresse,
+	public Agence(String numAgence,Gerant gerant, Adresse adresse,
 			Collection<Conseiller> conseillers) {
 		super();
 		this.numAgence = numAgence;

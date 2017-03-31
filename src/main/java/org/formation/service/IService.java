@@ -3,6 +3,7 @@ package org.formation.service;
 import java.util.List;
 
 import org.formation.model.Client;
+import org.formation.model.CompteBancaire;
 import org.formation.model.CompteCourant;
 
 /**
@@ -35,13 +36,13 @@ public interface IService<T> {
 	public void update(Class<T> t);
 
 	/**
-	 * methode qui recupère un objet de type T dans la base de donnees en passant par la dao
+	 * methode qui recupere un objet de type T dans la base de donnees en passant par la dao
 	 *
 	 */
 	public T select(Class<T> t, Long id);
 
 	/**
-	 * methode qui recupèrent tous les clients de la base de donnees en passant par la dao
+	 * methode qui recuperent tous les clients de la base de donnees en passant par la dao
 	 *
 	 */
 	public List<Client> selectAll();
@@ -50,4 +51,5 @@ public interface IService<T> {
 	
 	public List<CompteCourant> getComCour() throws Exception;
 	
+
 }
