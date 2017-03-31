@@ -2,8 +2,8 @@ package org.formation.model;
 
 import java.io.Serializable;
 
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -17,7 +17,7 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public class Client extends Personne implements Serializable{
 
 

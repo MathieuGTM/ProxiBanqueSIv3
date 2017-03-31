@@ -20,50 +20,35 @@
 
 
 
-		<h:messages  />
-
-		<h:form>
-			<h:form id="form" style="margin-top: 10px;">
-				<h:panelGrid columns="3">
-
-					<h:outputLabel>Nom :</h:outputLabel>
-					<h:inputText value="#{client.nom}" id="nom" required="true"
-						requiredMessage="Votre nom est obligatoire." />
-					<h:message for="nom" />
-
-					<h:outputLabel>Prénom :</h:outputLabel>
-					<h:inputText value="#{client.prenom}" id="prenom" required="true"
-						requiredMessage="Votre prénom est obligatoire." />
-					<h:message for="prenom" />
-
-<!-- 					<h:outputLabel>Adresse (Rue) :</h:outputLabel> -->
-<!-- 					<h:inputText value="#{client.adresse.rue}" id="rue" /> -->
-<!-- 					<h:message for="rue" /> -->
+		<h:messages />
 
 
-<!-- 					<h:outputLabel>Code Postal :</h:outputLabel> -->
-<!-- 					<h:inputText value="#{client.adresse.codePostal}" id="codePostal" /> -->
-<!-- 					<h:message for="codePostal" /> -->
+		<h:form id="form" style="margin-top: 10px;">
+			<h:panelGrid columns="3">
 
-<!-- 					<h:outputLabel>Ville :</h:outputLabel> -->
-<!-- 					<h:inputText value="#{client.adresse.ville}" id="ville" /> -->
-<!-- 					<h:message for="ville" /> -->
+				<h:outputLabel>Nom :</h:outputLabel>
+				<h:inputText value="#{client.nom}" id="nom" required="true"
+					requiredMessage="Votre nom est obligatoire." />
+				<h:message for="nom" />
+
+				<h:outputLabel>Prénom :</h:outputLabel>
+				<h:inputText value="#{client.prenom}" id="prenom" required="true"
+					requiredMessage="Votre prénom est obligatoire." />
+				<h:message for="prenom" />
+
+				<h:outputLabel>Telephone :</h:outputLabel>
+				<h:inputText value="#{client.telephone}" id="telephone" />
+				<h:message for="telephone" />
 
 
-					<h:outputLabel>Telephone :</h:outputLabel>
-					<h:inputText value="#{client.telephone}" id="telephone" />
-					<h:message for="telephone" />
+			</h:panelGrid>
 
 
+			<br />
+			<br />
+			<h:commandButton action="#{clientController.addClient(client)}"
+				value="Valider" />
 
-				</h:panelGrid>
-
-
-				<br />
-				<br />
-				<h:commandButton action="#{clientController.addClient(client)}"
-					value="Valider" />
-			</h:form>
 
 			<br />
 			<h:commandButton action="list-clients?faces-redirect=true"

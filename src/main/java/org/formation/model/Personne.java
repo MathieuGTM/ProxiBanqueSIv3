@@ -1,6 +1,7 @@
 package org.formation.model;
 
 
+import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.persistence.Entity;
@@ -20,7 +21,7 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance(strategy= InheritanceType.JOINED)
 @ManagedBean
-@SessionScoped
+@RequestScoped
 public abstract class Personne {
 
 	private String nom, prenom, telephone;
