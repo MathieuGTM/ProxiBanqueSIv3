@@ -29,17 +29,19 @@
 
 				<h:column>
 					<f:facet name="header">Type de compte</f:facet>
-					<h:outputText value="Compte Courant"/>
+					<h:outputText value="Compte Courant" />
 				</h:column>
-				
+
 				<h:column>
 					<f:facet name="header">Solde</f:facet>
-					<h:outputText value="#{tempCompteCourant.solde}"/>
+					<h:outputText value="#{tempCompteCourant.solde}" />
 				</h:column>
+
+
 
 			</h:dataTable>
 
-
+			<h:inputHidden value="#{client.id}" />
 
 
 			<br />
