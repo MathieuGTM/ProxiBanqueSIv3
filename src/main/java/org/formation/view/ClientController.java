@@ -18,7 +18,7 @@ import org.formation.service.IService;
 
 /**
  * La classe ClientController est un controleur (pattern MVC). Il permet a  la couche presentation de recuperer des informations 
- * sur des clients, de communiquer avec la bdd et permet la navigation et la redirection a certaines pages. Elle permet le log des 
+ * sur des clients, de communiquer avec le service et permet la navigation et la redirection a certaines pages. Elle permet le log des 
  * messages d'erreur, warning etc.
  * @author Mathieu et Aurelie
  */
@@ -49,7 +49,7 @@ private UIData dataTable;
 	
 	public ClientController() throws Exception {
 		clients = new ArrayList<>();
-	
+
 	}
 	
 	
@@ -76,7 +76,9 @@ private UIData dataTable;
 	}
 	
 	public List<Client> getClients() {
-//		loadClients();
+
+		
+		loadClients();
 		return clients;
 	}
 	
@@ -86,9 +88,20 @@ private UIData dataTable;
 
 		clients.clear();
 
+		// creation d'une base de donnees directement
+
+		
+		
+		clients.add(new Client("Paul", "Walker", "1011010101"));
+		clients.add(new Client("Céline", "Dion", "1011010101"));
+		clients.add(new Client("Texas", "Ranger", "4242424242"));
+		
+		
+		
 		try {
 
-			clients = service.selectAllT(Client.class, "Client");
+//			clients = service.selectAllT(Client.class, "Client");
+			clients = service.selectAll();
 
 		} catch (Exception exc) {
 			// send this to server logs
