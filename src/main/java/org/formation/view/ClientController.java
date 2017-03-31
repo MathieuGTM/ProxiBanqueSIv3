@@ -63,6 +63,7 @@ public class ClientController implements Serializable {
 	}
 	
 	public List<Client> getClients() {
+//		loadClients();
 		return clients;
 	}
 	
@@ -85,7 +86,26 @@ public class ClientController implements Serializable {
 		}
 	}
 	
-	
+//	public String deleteClient(Client client, int id) {
+//
+//		logger.info("Deleting client id: " + id);
+//
+//		try {
+//
+//			service.delete(client, id);
+//
+//		} catch (Exception exc) {
+//			// send this to server logs
+//			logger.log(Level.SEVERE, "Error deleting client id: " + id, exc);
+//
+//			// add error message for JSF page
+//			addErrorMessage(exc);
+//
+//			return null;
+//		}
+//
+//		return "list-clients";
+//	}
 
 
 

@@ -5,13 +5,19 @@
 
 
 <f:metadata>
-  <f:event type="preRenderView" listener="#{clientController.loadClients()}" />
+	<f:event type="preRenderView"
+		listener="#{clientController.loadClients()}" />
 </f:metadata>
 
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Opérations Client</title>
-</head>
+<h:head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>Opérations Client</title>
+
+
+</h:head>
 
 <h:body>
 	<div style="margin-left: 20px; margin-top: 15px;">
@@ -21,58 +27,53 @@
 		<p>Bonjour Tintin, voici votre liste de clients, que voulez vous
 			faire ?</p>
 	</div>
+
+	<h:messages globalOnly="true" />
+
+
+
 	<h:form>
 		<div style="margin-top: 10px; margin-left: 20px;">
 			<h:commandButton action="add-client?faces-redirect=true"
-				value="Ajouter Client" />
+				value="Ajouter un client" />
 		</div>
-		<h:dataTable value="#{clientController.clients}" var="tempClient" >
+		<h:dataTable value="#{clientController.clients}" var="tempClient">
 
-					<h:column>
-						<!-- the column header -->
-						<f:facet name="header">Nom</f:facet>
+			<h:column>
+				<!-- the column header -->
+				<f:facet name="header">Nom</f:facet>
 
-						<!--  the value for each row -->
+				<!--  the value for each row -->
 						#{tempClient.nom}
 					</h:column>
-					
-			
-					
 
-<!-- 					<h:column> -->
-<!-- 						the column header -->
-<!-- 						<f:facet name="header">Prénom</f:facet> -->
+			<h:column>
+				<f:facet name="header">Prénom</f:facet>
 
-<!-- 						 the value for each row -->
-<!-- 						<h:outputText value="#{tempClient.prenom}"></h:outputText> -->
+				<h:outputText value="#{tempClient.prenom}" />
 
-<!-- 					</h:column> -->
+			</h:column>
 
-<!-- 					<h:column> -->
-<!-- 						the column header -->
-<!-- 						<f:facet name="header"></f:facet> -->
+			<h:column>
+				<f:facet name="header"></f:facet>
 
-<!-- 						 the value for each row -->
-<!-- 						<h:outputText value="#{tempStudent.email}"></h:outputText> -->
+				<h:outputText value="#{tempClient.telephone}" />
 
-<!-- 					</h:column> -->
+			</h:column>
 
-<!-- 					<h:column> -->
-<!-- 						the column header -->
-<!-- 						<f:facet name="header">Action</f:facet> -->
+<!-- 			<h:column> -->
+<!-- 				<f:facet name="header">Action</f:facet> -->
 
-<!-- 						 the value for each row -->
-<!-- 						<h:commandLink value="Update" -->
-<!-- 							action="#{studentController.loadStudent(tempClient.id)}" /> -->
-<!-- 					| -->
+<!-- 				<h:commandLink value="Modifier" -->
+<!-- 					action="#{ClientController.loadClient(tempClient.id)}" /> -->
 
-<!-- 					<h:commandLink value="Delete" -->
-<!-- 							onclick="if (!confirm('Are you sure you want to delete this student?')) return false" -->
-<!-- 							action="#{studentController.deleteStudent(tempClient.id)}" /> -->
+<!-- 				<h:commandLink value="Supprimer" -->
+<!-- 					onclick="if (!confirm('Etes vous sur(e) de vouloir supprimer ce client ?')) return false" -->
+<!-- 					action="#{clientController.deleteClient(tempClient.id)}" /> -->
 
-<!-- 					</h:column> -->
+<!-- 			</h:column> -->
 
-				</h:dataTable>
+		</h:dataTable>
 	</h:form>
 
 </h:body>

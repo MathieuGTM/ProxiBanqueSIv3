@@ -5,7 +5,7 @@ import javax.persistence.Embeddable;
 
 /**
  * @author Mathieu et Aurelie
- * La classe Adresse possÃ¨de les attributs: rue, le code Postal et la ville
+ * La classe Adresse possède les attributs: rue, le code Postal et la ville
  */
 
 @Embeddable

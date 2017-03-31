@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
  * possession ou non d'un compte courant et d'un compte epargne, conseiller et carte bancaire.
  */
 @Entity
-@ManagedBean(name="client")
+@ManagedBean
 public class Client extends Personne implements Serializable{
 
 	/**
