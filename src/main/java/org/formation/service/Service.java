@@ -28,7 +28,7 @@ public class Service<T> implements IService<T> {
 	}
 
 
-	public void delete(Class<T> t, long id) {
+	public void delete(Class<T> t, Long id) {
 		dao.delete(t, id);
 	}
 
@@ -37,7 +37,7 @@ public class Service<T> implements IService<T> {
 		dao.update(t);
 	}
 	
-	public T select(Class<T> t, long id) {
+	public T select(Class<T> t, Long id) {
 
 		return dao.select(t, id);
 	}

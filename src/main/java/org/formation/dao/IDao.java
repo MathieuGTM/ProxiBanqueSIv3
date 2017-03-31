@@ -25,7 +25,7 @@ public interface IDao<T> {
 	 * méthode qui supprime un objet de type T dans la base de données 
 	 *
 	 */
-	public void delete(Class<T> t, long id);
+	public void delete(Class<T> t, Long id);
 
 	/**
 	 * méthode qui modifie un objet de type T dans la base de données 
@@ -37,7 +37,7 @@ public interface IDao<T> {
 	 * méthode qui recupere un objet de type T dans la base de données 
 	 *
 	 */
-	public T select(Class<T> t, long id);
+	public T select(Class<T> t, Long id);
 //	public List<T> selectAll(Class<T> t, String table);
 
 	/**

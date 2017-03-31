@@ -47,7 +47,7 @@ public class Dao<T> implements IDao<T>{
 
 
 	
-	public void delete(Class<T> t, long id) {
+	public void delete(Class<T> t, Long id) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
 		try {
@@ -90,7 +90,7 @@ public class Dao<T> implements IDao<T>{
 		
 	}
 	
-	public T select(Class<T> t, long id) {
+	public T select(Class<T> t, Long id) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
 		T recup = null;
