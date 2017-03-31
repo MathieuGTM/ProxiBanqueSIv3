@@ -3,7 +3,6 @@ package org.formation.service;
 import java.util.List;
 
 import org.formation.model.Client;
-import org.formation.model.CompteBancaire;
 import org.formation.model.CompteCourant;
 
 /**
