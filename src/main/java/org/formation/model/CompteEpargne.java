@@ -6,7 +6,7 @@ import javax.persistence.OneToOne;
 
 /**
  * @author adminl
- * La classe CompteEpargne étend la classe CompteBancaire et ajoute les attributs : taux et Client
+ * La classe CompteEpargne etend la classe CompteBancaire et ajoute les attributs : taux et Client
  */
 
 

@@ -12,7 +12,7 @@ import javax.persistence.InheritanceType;
 
 /**
  * @author Mathieu et Aurelie
- * La classe abstraite Personne définit les attributs de la classe personne : nom, 
+ * La classe abstraite Personne definit les attributs de la classe personne : nom, 
  * prenom et telephone
  */
 

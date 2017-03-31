@@ -11,8 +11,8 @@ import javax.persistence.OneToOne;
 
 /**
  * @author adminl
- * La classe client étend la classe personne et lui ajoute les attributs : Adresse, client fortuné (booléen), type de client (particulier ou professionel),
- * possession ou non d'un compte courant et d'un compte épargne, conseiller et carte bancaire.
+ * La classe client etend la classe personne et lui ajoute les attributs : Adresse, client fortune (booleen), type de client (particulier ou professionel),
+ * possession ou non d'un compte courant et d'un compte epargne, conseiller et carte bancaire.
  */
 @Entity
 @ManagedBean(name="client")

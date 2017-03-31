@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 
 /**
  * @author Mathieu et Aurelie
- * La classe Gérant étend la classe Personne et lui ajoute un attribut Agence
+ * La classe Gerant etend la classe Personne et lui ajoute un attribut Agence
  */
 
 @Entity

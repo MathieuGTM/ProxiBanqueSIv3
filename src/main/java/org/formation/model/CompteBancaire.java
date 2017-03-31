@@ -16,7 +16,7 @@ import javax.persistence.OneToOne;
 
 /**
  * @author adminl
- * La classe abstraite compteBancaire définit les attributs : idCompte, solde et date de création
+ * La classe abstraite compteBancaire definit les attributs : idCompte, solde et date de creation
  */
 
 

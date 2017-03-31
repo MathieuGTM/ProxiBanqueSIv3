@@ -6,9 +6,9 @@ import org.formation.model.Client;
 
 
 /**
- * @author Mathieu et AurÃ©lie
- * L'interface IDao<T> est une interface gÃ©nÃ©rique. Elle permet a l'application et notamment au  
- *  conseiller de : ajouter un client dans la bdd, en supprimer un, le mettre Ã  jour
+ * @author Mathieu et Aurélie
+ * L'interface IDao<T> est une interface générique. Elle permet a l'application et notamment au  
+ *  conseiller de : ajouter un client dans la bdd, en supprimer un, le mettre a  jour
  * et afficher les infos d'un client ou de plusieurs.
  */
 
@@ -16,32 +16,32 @@ import org.formation.model.Client;
 public interface IDao<T> {
 
 	/**
-	 * mÃ©thode qui persiste un objet de type T dans la base de donnÃ©es 
+	 * méthode qui persiste un objet de type T dans la base de données 
 	 *
 	 */
 	public void create(T t);
 
 	/**
-	 * mÃ©thode qui supprime un objet de type T dans la base de donnÃ©es 
+	 * méthode qui supprime un objet de type T dans la base de données 
 	 *
 	 */
 	public void delete(Class<T> t, long id);
 
 	/**
-	 * mÃ©thode qui modifie un objet de type T dans la base de donnÃ©es 
+	 * méthode qui modifie un objet de type T dans la base de données 
 	 *
 	 */
 	public void update(Class<T> t);
 
 	/**
-	 * mÃ©thode qui recupere un objet de type T dans la base de donnÃ©es 
+	 * méthode qui recupere un objet de type T dans la base de données 
 	 *
 	 */
 	public T select(Class<T> t, long id);
 //	public List<T> selectAll(Class<T> t, String table);
 
 	/**
-	 * mÃ©thode qui rÃ©cupÃ¨re tous les clients dans la base de donnÃ©es 
+	 * méthode qui récupÃ¨re tous les clients dans la base de données 
 	 *
 	 */
 	public List<Client> getClients();

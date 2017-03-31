@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 
 /**
  * @author Mathieu et Aurelie
- * La classe CB (carte bancaire) possÃ¨de les attributs : id, et le type de CB 
+ * La classe CB (carte bancaire) possède les attributs : id, et le type de CB 
  */
 
 @Entity

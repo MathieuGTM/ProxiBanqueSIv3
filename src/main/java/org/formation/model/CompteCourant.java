@@ -6,7 +6,7 @@ import javax.persistence.OneToOne;
 
 /**
  * @author adminl
- * La classe CompteCourant étend la classe compteBancaire et lui ajoute l'attribut : decouvert (1000 par défaut) et un client
+ * La classe CompteCourant etend la classe compteBancaire et lui ajoute l'attribut : decouvert (1000 par defaut) et un client
  */
 
 @Entity

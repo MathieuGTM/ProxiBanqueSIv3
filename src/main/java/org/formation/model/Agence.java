@@ -14,6 +14,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+
+/**
+ * La classe Agence lui définit les attributs : id, numéro d'agence, date de creation, gerant, adresse et liste de conseillers
+ * @author Mathieu et Aurelie
+ */
+
 @Entity
 public class Agence {
 

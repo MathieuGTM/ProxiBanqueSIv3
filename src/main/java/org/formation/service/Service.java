@@ -11,8 +11,8 @@ import org.formation.model.Client;
 
 
 /**
- * La classe Service implémente l'interface IService et détaille les méthodes signées dans l'interface
- * @author Mathieu et Aurélie
+ * La classe Service implemente l'interface IService et detaille les methodes signees dans l'interface
+ * @author Mathieu et Aurelie
  */
 
 

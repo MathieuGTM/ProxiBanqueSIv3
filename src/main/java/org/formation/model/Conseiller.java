@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 
 /**
  * @author adminl
- * La classe conseiller étend la classe Personne et ajoute les attributs : nombre de clients, une collection de clients et une Agence
+ * La classe conseiller etend la classe Personne et ajoute les attributs : nombre de clients, une collection de clients et une Agence
  */
 
 

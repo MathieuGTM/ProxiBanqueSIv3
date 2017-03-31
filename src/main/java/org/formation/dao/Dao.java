@@ -14,10 +14,10 @@ import org.formation.model.Client;
 
 
 /**
- * La classe Dao implÃ©mente l'interface IDao et dÃ©taille les
- * mÃ©thodes signÃ©es dans l'interface
+ * La classe Dao implémente l'interface IDao et détaille les
+ * méthodes signées dans l'interface
  * 
- * @author Mathieu et AurÃ©lie
+ * @author Mathieu et Aurélie
  */
 
 
