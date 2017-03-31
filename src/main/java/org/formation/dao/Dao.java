@@ -71,7 +71,7 @@ public class Dao<T> implements IDao<T>{
 
 
 
-	public void update(Class<T> t) {
+	public void update(T t) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
 

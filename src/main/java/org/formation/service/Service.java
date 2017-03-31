@@ -33,7 +33,7 @@ public class Service<T> implements IService<T> {
 	}
 
 	@Override
-	public void update(Class<T> t) {
+	public void update(T t) {
 		dao.update(t);
 	}
 	@Override

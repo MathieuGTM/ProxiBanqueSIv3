@@ -21,7 +21,15 @@ public class AuditController implements Serializable {
 	private Logger logger = Logger.getLogger(getClass().getName());
 	
 	private List<CompteCourant> ccs;
+	Integer i;
 	
+	
+	public Integer getI() {
+		return i;
+	}
+
+
+
 	@Inject
 	IService<CompteCourant> service;
 	
@@ -35,24 +43,31 @@ public class AuditController implements Serializable {
 		logger.info("Loading comptes courant");
 
 		ccs.clear();
-		Integer i=0;
+		i=0;
 		
 		try {
 			
 			ccs = service.getComCour();
+			System.out.println(ccs);
 			for (CompteCourant cc : ccs) {
-				if (cc.getClient().getTypeClient() == TypeClient.PARTICULIER) {
-					if (cc.getSolde() < -5000) {
-						i++;
-					}
-				}else if (cc.getClient().getTypeClient() == TypeClient.PROFESSIONEL) {
-					if (cc.getSolde() < -50000) {
-						i++;
-					}
-				}else{}
+				System.out.println(cc.getSolde());
+				if (cc.getSolde() < -5000) {
+					i++;
+					System.out.println("idfhgqdf");
+				}
+				
+//				if (cc.getClient().getTypeClient() == TypeClient.PARTICULIER) {
+//					if (cc.getSolde() < -5000) {
+//						i++;
+//					}
+//				}else if (cc.getClient().getTypeClient() == TypeClient.PROFESSIONEL) {
+//					if (cc.getSolde() < -50000) {
+//						i++;
+//					}
+//				}else{}
 				
 			}
-			System.out.println(i+"!!!!!!!!!!!!!!");
+			System.out.println(i+"!!hjgfghfxd!!");
 		} catch (Exception exc) {
 			// send this to server logs
 			logger.log(Level.SEVERE, "Error comptes courant", exc);
@@ -60,7 +75,7 @@ public class AuditController implements Serializable {
 			// add error message for JSF page
 		//	addErrorMessage(exc);
 		}
-		return i.toString();
+		return "audit2";
 	}
 
 }

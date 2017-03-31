@@ -32,7 +32,7 @@ public interface IService<T> {
 	 * methode qui modifie un objet de type T dans la base de donnees en passant par la dao
 	 *
 	 */
-	public void update(Class<T> t);
+	public void update(T t);
 
 	/**
 	 * methode qui recupere un objet de type T dans la base de donnees en passant par la dao

@@ -32,7 +32,7 @@ public interface IDao<T> {
 	 * méthode qui modifie un objet de type T dans la base de données 
 	 *
 	 */
-	public void update(Class<T> t);
+	public void update(T t);
 
 	/**
 	 * méthode qui recupere un objet de type T dans la base de données 
