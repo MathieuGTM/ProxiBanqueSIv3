@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
  */
 
 @Entity
-@ManagedBean(name="cc")
+@ManagedBean
 public class CompteCourant extends CompteBancaire {
 
 
