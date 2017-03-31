@@ -130,7 +130,8 @@ public class Client extends Personne implements Serializable{
 	public String toString() {
 		return "Client [adresse=" + adresse + ", clientFortune=" + clientFortune + ", typeClient=" + typeClient
 				+ ", compteCourant=" + compteCourant + ", compteEpargne=" + compteEpargne + ", conseiller=" + conseiller
-				+ ", cb=" + cb + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom() + "]";
+				+ ", cb=" + cb + ", getId()=" + getId() + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom()
+				+ ", getTelephone()=" + getTelephone() + "]";
 	}
 
 

@@ -33,6 +33,10 @@ public abstract class Personne {
 		return id;
 	}
 
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public Personne() {
 		super();
 	}

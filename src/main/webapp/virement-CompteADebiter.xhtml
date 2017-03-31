@@ -37,11 +37,17 @@
 					<h:outputText value="#{tempCompteCourant.solde}" />
 				</h:column>
 
+				<h:column>
+					<f:facet name="header">Action</f:facet>
 
+					<h:commandButton value="Selectionner ce compte"
+						action="#{clientController.loadClient(tempCompteCourant.id)}" />
+
+
+				</h:column>
 
 			</h:dataTable>
 
-			<h:inputHidden value="#{client.id}" />
 
 
 			<br />

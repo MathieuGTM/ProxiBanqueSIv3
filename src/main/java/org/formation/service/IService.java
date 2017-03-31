@@ -26,19 +26,19 @@ public interface IService<T> {
 	 * methode qui supprime un objet de type T dans la base de donnees en passant par la dao
 	 *
 	 */	
-	public void delete(Class<T> t, Long id);
+	public void delete(Long id);
 
 	/**
 	 * methode qui modifie un objet de type T dans la base de donnees en passant par la dao
 	 *
 	 */
-	public void update(T t);
+	public void update(Client t);
 
 	/**
 	 * methode qui recupere un objet de type T dans la base de donnees en passant par la dao
 	 *
 	 */
-	public T select(Class<T> t, Long id);
+	public Client select(Long id);
 
 	/**
 	 * methode qui recuperent tous les clients de la base de donnees en passant par la dao

@@ -48,12 +48,12 @@ public class Dao<T> implements IDao<T>{
 
 
 	
-	public void delete(Class<T> t, Long id) {
+	public void delete(Long id) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
 		try {
 			etxn.begin();
-			T remove = em.find(t, id);
+			Client remove = em.find(Client.class, id);
 			
 			em.remove(remove);
 			System.out.println("delete "+remove.toString());
@@ -71,7 +71,7 @@ public class Dao<T> implements IDao<T>{
 
 
 
-	public void update(T t) {
+	public void update(Client t) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
 
@@ -91,15 +91,15 @@ public class Dao<T> implements IDao<T>{
 		
 	}
 	
-	public T select(Class<T> t, Long id) {
+	public Client select( Long id) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
-		T recup = null;
+		Client recup = null;
 
 		try {
 			etxn.begin();
 			
-			recup = em.find(t, id);
+			recup = em.find(Client.class, id);
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)

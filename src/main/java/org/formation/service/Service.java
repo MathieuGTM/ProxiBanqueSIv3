@@ -28,18 +28,18 @@ public class Service<T> implements IService<T> {
 	}
 
 	@Override
-	public void delete(Class<T> t, Long id) {
-		dao.delete(t, id);
+	public void delete(Long id) {
+		dao.delete(id);
 	}
 
 	@Override
-	public void update(T t) {
+	public void update(Client t) {
 		dao.update(t);
 	}
 	@Override
-	public T select(Class<T> t, Long id) {
+	public Client select(Long id) {
 
-		return dao.select(t, id);
+		return dao.select(id);
 	}
 
 	@Override

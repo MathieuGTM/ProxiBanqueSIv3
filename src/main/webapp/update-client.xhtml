@@ -23,28 +23,36 @@
 
 	<h:messages globalOnly="true" />
 
-	<h:form>
-		<h:form id="form" style="margin-top: 10px;">
-			<h:panelGrid columns="3">
 
-				<h:outputLabel>Nom :</h:outputLabel>
-				<h:inputText value="#{client.nom}" id="nom"/>
-				<h:message for="nom" />
+	<h:form id="form" style="margin-top: 10px;">
+		<h:panelGrid columns="3">
 
-				<h:outputLabel>Prénom :</h:outputLabel>
-				<h:inputText value="#{client.prenom}"  />
-				<h:message for="prenom" />
+			<h:outputLabel>Nom :</h:outputLabel>
+			<h:inputText value="#{client.nom}" id="nom">#{client.nom}</h:inputText>
+			<h:message for="nom" />
 
-				<h:inputHidden value="#{client.id}" />
-				
-				<h:commandButton value="Modifier" action="#{clientController.updateClient(client)}"/>
-				
-			</h:panelGrid>
 
-			<p>
-				<h:outputLink value="list-clients.xhtml">Retour à la liste</h:outputLink>
-			</p>
 
-		</h:form>
+
+			<h:outputLabel>Prénom :</h:outputLabel>
+			<h:inputText value="#{client.prenom}" />
+			<h:message for="prenom" />
+
+
+		</h:panelGrid>
+
+
+		<h:inputHidden value="#{client.id}" />
+
+
+
+		<h:commandButton value="Modifier"
+			action="#{clientController.updateClient(client)}" />
+
+		<p>
+			<h:outputLink value="list-clients.xhtml">Retour à la liste</h:outputLink>
+		</p>
+
+	</h:form>
 </h:body>
 </html>

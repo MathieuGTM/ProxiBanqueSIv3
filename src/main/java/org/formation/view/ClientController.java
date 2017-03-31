@@ -57,7 +57,8 @@ public class ClientController implements Serializable {
 		logger.info("Adding client : " + client);
 
 		try {
-			if (clients.size() <= 10) {
+			loadClients();
+			if (clients.size() < 10) {
 				service.create(client);
 			}
 
@@ -85,13 +86,6 @@ public class ClientController implements Serializable {
 		logger.info("Loading clients");
 
 		clients.clear();
-
-		// creation d'une base de donnees directement
-
-		clients.add(new Client("Paul", "Walker", "1011010101"));
-		clients.add(new Client("Céline", "Dion", "1011010101"));
-		clients.add(new Client("Texas", "Ranger", "4242424242"));
-
 		try {
 
 			// clients = service.selectAllT(Client.class, "Client");
@@ -99,42 +93,42 @@ public class ClientController implements Serializable {
 
 		} catch (Exception exc) {
 			// send this to server logs
-			logger.log(Level.SEVERE, "Error loading students", exc);
+			logger.log(Level.SEVERE, "Error loading clients", exc);
 
 			// add error message for JSF page
 			addErrorMessage(exc);
 		}
 	}
 
-	// public String deleteClient(Client client, int id) {
-	//
-	// logger.info("Deleting client id: " + id);
-	//
-	// try {
-	//
-	// service.delete(client, id);
-	//
-	// } catch (Exception exc) {
-	// // send this to server logs
-	// logger.log(Level.SEVERE, "Error deleting client id: " + id, exc);
-	//
-	// // add error message for JSF page
-	// addErrorMessage(exc);
-	//
-	// return null;
-	// }
-	//
-	// return "list-clients";
-	// }
+	 public String deleteClient(Long id) {
+	
+	 logger.info("Deleting client id: " + id);
+	
+	 try {
+	
+	 service.delete(id);
+	
+	 } catch (Exception exc) {
+	 // send this to server logs
+	 logger.log(Level.SEVERE, "Error deleting client id: " + id, exc);
+	
+	 // add error message for JSF page
+	 addErrorMessage(exc);
+	
+	 return null;
+	 }
+	
+	 return "list-clients";
+	 }
 
 	public String loadClient(Long id) {
 
 		logger.info("loading client: " + id);
 
 		try {
-			// TODO : probleme!!!!!!!!!
-			Client client = service.select(Client.class, id);
+			Client client = service.select(id);
 
+			System.out.println(client + "!!!!!!!!!!!!!");
 			// put in the request attribute ... so we can use it on the form
 			// page
 			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
@@ -144,7 +138,7 @@ public class ClientController implements Serializable {
 
 		} catch (Exception exc) {
 			// send this to server logs
-			logger.log(Level.SEVERE, "Error loading student id:" + id, exc);
+			logger.log(Level.SEVERE, "Error loading client id:" + id, exc);
 
 			// add error message for JSF page
 			addErrorMessage(exc);
@@ -157,15 +151,15 @@ public class ClientController implements Serializable {
 
 	public String updateClient(Client client) {
 
-		logger.info("updating student: " + client);
+		logger.info("updating client: " + client);
 
 		try {
-			// update student in the database
+			// update client in the database
 			service.update(client);
 
 		} catch (Exception exc) {
 			// send this to server logs
-			logger.log(Level.SEVERE, "Error updating student: " + client, exc);
+			logger.log(Level.SEVERE, "Error updating client: " + client, exc);
 
 			// add error message for JSF page
 			addErrorMessage(exc);
