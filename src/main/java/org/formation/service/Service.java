@@ -2,12 +2,12 @@ package org.formation.service;
 
 import java.util.List;
 
-import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.formation.dao.IDao;
 import org.formation.model.Client;
+import org.formation.model.CompteCourant;
 
 
 /**
@@ -43,11 +43,16 @@ public class Service<T> implements IService<T> {
 	}
 
 
-//	public List<T> selectAll(Class<T> t, String table) {
-//
-//		return dao.selectAll(t,table);
-//	}
+	public List<T> selectAllT(Class<T> t, String table) {
 
+		return dao.selectAll(t,table);
+	}
+	
+	@Override
+	public List<CompteCourant> getComCour() throws Exception {
+		List<CompteCourant> ccs = dao.getComCou();
+		return ccs;
+	}
 
 	@Override
 	public List<Client> selectAll() {

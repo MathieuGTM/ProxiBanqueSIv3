@@ -3,6 +3,7 @@ package org.formation.dao;
 import java.util.List;
 
 import org.formation.model.Client;
+import org.formation.model.CompteCourant;
 
 
 /**
@@ -38,12 +39,14 @@ public interface IDao<T> {
 	 *
 	 */
 	public T select(Class<T> t, Long id);
-//	public List<T> selectAll(Class<T> t, String table);
+	public List<T> selectAll(Class<T> t, String table);
 
 	/**
 	 * méthode qui récupÃ¨re tous les clients dans la base de données 
 	 *
 	 */
 	public List<Client> getClients();
+	
+	public List<CompteCourant> getComCou() throws Exception;
 	
 }
