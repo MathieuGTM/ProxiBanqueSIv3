@@ -2,6 +2,12 @@ package org.formation.model;
 
 import javax.persistence.Embeddable;
 
+
+/**
+ * @author Mathieu et Aurelie
+ * La classe Adresse possède les attributs: rue, le code Postal et la ville
+ */
+
 @Embeddable
 public class Adresse {
 

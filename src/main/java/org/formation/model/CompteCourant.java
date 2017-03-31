@@ -3,6 +3,12 @@ package org.formation.model;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
+
+/**
+ * @author adminl
+ * La classe CompteCourant étend la classe compteBancaire et lui ajoute l'attribut : decouvert (1000 par défaut) et un client
+ */
+
 @Entity
 public class CompteCourant extends CompteBancaire {
 

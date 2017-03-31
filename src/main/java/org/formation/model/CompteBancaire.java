@@ -13,6 +13,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.OneToOne;
 
+
+/**
+ * @author adminl
+ * La classe abstraite compteBancaire définit les attributs : idCompte, solde et date de création
+ */
+
+
 @Entity
 @Inheritance(strategy= InheritanceType.JOINED)
 public abstract class CompteBancaire {

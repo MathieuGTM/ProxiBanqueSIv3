@@ -6,6 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+
+/**
+ * @author Mathieu et Aurelie
+ * La classe CB (carte bancaire) possède les attributs : id, et le type de CB 
+ */
+
 @Entity
 public class CB {
 	

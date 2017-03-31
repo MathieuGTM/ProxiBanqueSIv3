@@ -3,6 +3,13 @@ package org.formation.model;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
+
+/**
+ * @author adminl
+ * La classe CompteEpargne étend la classe CompteBancaire et ajoute les attributs : taux et Client
+ */
+
+
 @Entity
 public class CompteEpargne extends CompteBancaire {
 

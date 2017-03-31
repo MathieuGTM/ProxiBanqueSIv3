@@ -9,6 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+/**
+ * @author adminl
+ * La classe conseiller étend la classe Personne et ajoute les attributs : nombre de clients, une collection de clients et une Agence
+ */
+
+
 @Entity
 public class Conseiller extends Personne {
 	

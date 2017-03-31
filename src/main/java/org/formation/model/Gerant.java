@@ -7,6 +7,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+/**
+ * @author Mathieu et Aurelie
+ * La classe Gérant étend la classe Personne et lui ajoute un attribut Agence
+ */
+
 @Entity
 public class Gerant extends Personne {
 	

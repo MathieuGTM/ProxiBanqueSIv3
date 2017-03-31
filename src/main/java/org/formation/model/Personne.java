@@ -9,6 +9,13 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+
+/**
+ * @author Mathieu et Aurelie
+ * La classe abstraite Personne définit les attributs de la classe personne : nom, 
+ * prenom et telephone
+ */
+
 @Entity
 @Inheritance(strategy= InheritanceType.JOINED)
 @ManagedBean

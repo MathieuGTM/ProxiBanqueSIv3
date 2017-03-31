@@ -11,7 +11,8 @@ import javax.persistence.OneToOne;
 
 /**
  * @author adminl
- *
+ * La classe client étend la classe personne et lui ajoute les attributs : Adresse, client fortuné (booléen), type de client (particulier ou professionel),
+ * possession ou non d'un compte courant et d'un compte épargne, conseiller et carte bancaire.
  */
 @Entity
 @ManagedBean(name="client")
@@ -22,16 +23,6 @@ public class Client extends Personne implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String nom2;
-	
-	public String getNom2() {
-		return nom2;
-	}
-
-	public void setNom2(String nom2) {
-		this.nom2 = nom2;
-	}
-
 
 
 	@Embedded
