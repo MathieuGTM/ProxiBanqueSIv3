@@ -11,6 +11,7 @@ import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
 import org.formation.model.Client;
+import org.formation.model.CompteCourant;
 
 
 /**
@@ -113,28 +114,28 @@ public class Dao<T> implements IDao<T>{
 	}
 
 
-//	public List<T> selectAll(Class<T> t,String table) {
-//		EntityManager em = emf.createEntityManager();
-//		EntityTransaction etxn = em.getTransaction();
-//		List<T> list = null ;
-//		String sql = "SELECT c FROM "+ table+" c ";
-//        
-//		try {
-//			etxn.begin();
-//			TypedQuery<T> query = em.createQuery(sql, t);
-//			list = query.getResultList();
-//			etxn.commit();
-//		} catch (Exception e) {
-//			if (etxn != null)
-//				etxn.rollback();
-//			System.out.println(e.getMessage());
-//			
-//		} finally {
-//			if (em != null)
-//				em.close();
-//		}
-//		return list;
-//	}
+	public List<T> selectAll(Class<T> t,String table) {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction etxn = em.getTransaction();
+		List<T> list = null ;
+		String sql = "SELECT c FROM "+ table+" c ";
+        
+		try {
+			etxn.begin();
+			TypedQuery<T> query = em.createQuery(sql, t);
+			list = query.getResultList();
+			etxn.commit();
+		} catch (Exception e) {
+			if (etxn != null)
+				etxn.rollback();
+			System.out.println(e.getMessage());
+			
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		return list;
+	}
 
 
 
@@ -144,12 +145,13 @@ public class Dao<T> implements IDao<T>{
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction etxn = em.getTransaction();
 		List<Client> list = new ArrayList<>() ;
-		String sql = "SELECT c FROM Client c ";
+		// String sql = "SELECT c FROM Client c ";
         
 		try {
 			etxn.begin();
-			TypedQuery<Client> query = em.createQuery(sql, Client.class);
+			TypedQuery<Client> query = em.createQuery("from Client", Client.class);
 			list = query.getResultList();
+			System.out.println(list.size()+ "!!!!!!!!!!");
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
@@ -164,7 +166,30 @@ public class Dao<T> implements IDao<T>{
 		
 	}
 	
+	@Override
+	public List<CompteCourant> getComCou() throws Exception {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction txn = em.getTransaction();
+		List<CompteCourant> retList = new ArrayList<>();
+		try {
+			txn.begin();
 
+			TypedQuery<CompteCourant> query = em.createQuery("from CompteCourant", CompteCourant.class);
+			retList = query.getResultList();
+
+			txn.commit();
+		} catch (Exception e) {
+			if (txn != null) {
+				txn.rollback();
+			}
+			e.printStackTrace();
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return retList;
+	}
 	
 
 }

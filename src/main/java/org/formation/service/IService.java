@@ -3,6 +3,7 @@ package org.formation.service;
 import java.util.List;
 
 import org.formation.model.Client;
+import org.formation.model.CompteCourant;
 
 /**
  * @author Mathieu et Aurelie
@@ -44,7 +45,9 @@ public interface IService<T> {
 	 *
 	 */
 	public List<Client> selectAll();
-//	public List<T> selectAll(Class<T> t, String table);
 	
+	public List<T> selectAllT(Class<T> t, String table);
+	
+	public List<CompteCourant> getComCour() throws Exception;
 	
 }
