@@ -10,6 +10,12 @@ import org.formation.dao.IDao;
 import org.formation.model.Client;
 
 
+/**
+ * La classe Service implémente l'interface IService et détaille les méthodes signées dans l'interface
+ * @author Mathieu et Aurélie
+ */
+
+
 @Named
 public class Service<T> implements IService<T> {
 
