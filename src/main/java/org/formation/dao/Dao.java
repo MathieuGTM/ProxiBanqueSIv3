@@ -12,6 +12,15 @@ import javax.persistence.TypedQuery;
 
 import org.formation.model.Client;
 
+
+/**
+ * La classe Dao implémente l'interface IDao et détaille les
+ * méthodes signées dans l'interface
+ * 
+ * @author Mathieu et Aurélie
+ */
+
+
 @Named
 public class Dao<T> implements IDao<T>{
 
