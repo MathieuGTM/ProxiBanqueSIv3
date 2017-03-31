@@ -128,7 +128,6 @@ public class ClientController implements Serializable {
 		try {
 			Client client = service.select(id);
 
-			System.out.println(client + "!!!!!!!!!!!!!");
 			// put in the request attribute ... so we can use it on the form
 			// page
 			ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();

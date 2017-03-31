@@ -21,7 +21,9 @@
 		<p>Modifiez votre client :</p>
 	</div>
 
-	<h:messages globalOnly="true" />
+	<h:messages />
+
+	<h:outputText value="coucou voila mon id : je suis ici : #{client.id}" />
 
 
 	<h:form id="form" style="margin-top: 10px;">
@@ -44,7 +46,7 @@
 
 		<h:inputHidden value="#{client.id}" />
 
-
+		
 
 		<h:commandButton value="Modifier"
 			action="#{clientController.updateClient(client)}" />

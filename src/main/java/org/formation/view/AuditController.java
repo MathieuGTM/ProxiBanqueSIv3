@@ -48,12 +48,9 @@ public class AuditController implements Serializable {
 		try {
 			
 			ccs = service.getComCour();
-			System.out.println(ccs);
 			for (CompteCourant cc : ccs) {
-				System.out.println(cc.getSolde());
 				if (cc.getSolde() < -5000) {
 					i++;
-					System.out.println("idfhgqdf");
 				}
 				
 //				if (cc.getClient().getTypeClient() == TypeClient.PARTICULIER) {
@@ -67,7 +64,6 @@ public class AuditController implements Serializable {
 //				}else{}
 				
 			}
-			System.out.println(i+"!!hjgfghfxd!!");
 		} catch (Exception exc) {
 			// send this to server logs
 			logger.log(Level.SEVERE, "Error comptes courant", exc);

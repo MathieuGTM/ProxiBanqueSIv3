@@ -56,10 +56,8 @@ public class Dao<T> implements IDao<T>{
 			Client remove = em.find(Client.class, id);
 			
 			em.remove(remove);
-			System.out.println("delete "+remove.toString());
 			etxn.commit();
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
 			if (etxn != null)
 				etxn.rollback();
 		} finally {
@@ -77,12 +75,13 @@ public class Dao<T> implements IDao<T>{
 
 		try {
 			etxn.begin();
-			em.merge(t);
+			Client c = em.find(Client.class, t.getId());
+			
+			em.merge(c);
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
 				etxn.rollback();
-			System.out.println(e.getMessage());
 			
 		}finally {
 			if (em != null)
@@ -104,7 +103,6 @@ public class Dao<T> implements IDao<T>{
 		} catch (Exception e) {
 			if (etxn != null)
 				etxn.rollback();
-			System.out.println(e.getMessage());
 			
 		}finally {
 			if (em != null)
@@ -124,12 +122,10 @@ public class Dao<T> implements IDao<T>{
 			etxn.begin();
 			TypedQuery<T> query = em.createQuery(sql, t);
 			list = query.getResultList();
-			System.out.println(list+" from DAO !!!!!!!!!!");
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
 				etxn.rollback();
-			System.out.println(e.getMessage());
 			
 		} finally {
 			if (em != null)
@@ -152,14 +148,10 @@ public class Dao<T> implements IDao<T>{
 			etxn.begin();
 			TypedQuery<Client> query = em.createQuery("from Client", Client.class);
 			list = query.getResultList();
-			System.out.println(list.size()+ "!!!!!!!!!!");
-			System.out.println(list+" from DAO !!!!!!!!!!");
-			System.out.println(list.get(0).getNom());
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
 				etxn.rollback();
-			//System.out.println(e.getMessage());
 			
 		} finally {
 			if (em != null)

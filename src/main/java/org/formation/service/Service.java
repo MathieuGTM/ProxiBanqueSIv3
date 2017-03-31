@@ -44,7 +44,6 @@ public class Service<T> implements IService<T> {
 
 	@Override
 	public List<T> selectAllT(Class<T> t, String table) {
-		System.out.println("service : "+ dao.selectAll(t,table));
 		return dao.selectAll(t,table);
 	}
 	
@@ -56,7 +55,6 @@ public class Service<T> implements IService<T> {
 
 	@Override
 	public List<Client> selectAll() {
-		System.out.println("From service : "+ dao.getClients().get(0).getNom());
 		return dao.getClients();
 	}
 

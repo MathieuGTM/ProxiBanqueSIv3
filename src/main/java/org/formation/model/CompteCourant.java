@@ -1,7 +1,5 @@
 package org.formation.model;
 
-import java.util.Date;
-
 import javax.faces.bean.ManagedBean;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
