@@ -7,7 +7,6 @@ import javax.inject.Named;
 
 import org.formation.dao.IDao;
 import org.formation.model.Client;
-import org.formation.model.CompteBancaire;
 import org.formation.model.CompteCourant;
 
 
@@ -23,27 +22,27 @@ public class Service<T> implements IService<T> {
 	@Inject
 	IDao<T> dao;
 
-
+	@Override
 	public void create(T t) {
 		dao.create(t);
 	}
 
-
+	@Override
 	public void delete(Class<T> t, Long id) {
 		dao.delete(t, id);
 	}
 
-	
+	@Override
 	public void update(Class<T> t) {
 		dao.update(t);
 	}
-	
+	@Override
 	public T select(Class<T> t, Long id) {
 
 		return dao.select(t, id);
 	}
 
-
+	@Override
 	public List<T> selectAllT(Class<T> t, String table) {
 		System.out.println("service : "+ dao.selectAll(t,table));
 		return dao.selectAll(t,table);
