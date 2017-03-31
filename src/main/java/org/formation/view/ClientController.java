@@ -14,6 +14,15 @@ import javax.inject.Named;
 import org.formation.model.Client;
 import org.formation.service.IService;
 
+
+/**
+ * La classe ClientController est un controleur (pattern MVC). Il permet à la couche présentation de récupérer des informations 
+ * sur des clients, de communiquer avec la bdd et permet la navigation et la redirection a certaines pages. Elle permet le log des 
+ * messages d'erreur, warning etc.
+ * @author Mathieu et Aurélie
+ */
+
+
 @Named
 public class ClientController implements Serializable {
 
