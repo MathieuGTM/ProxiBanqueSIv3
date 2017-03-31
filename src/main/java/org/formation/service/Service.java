@@ -7,6 +7,7 @@ import javax.inject.Named;
 
 import org.formation.dao.IDao;
 import org.formation.model.Client;
+import org.formation.model.CompteBancaire;
 import org.formation.model.CompteCourant;
 
 
@@ -58,6 +59,8 @@ public class Service<T> implements IService<T> {
 	public List<Client> selectAll() {
 		return dao.getClients();
 	}
+
+
 
 	
 
