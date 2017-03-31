@@ -3,7 +3,6 @@ package org.formation.dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,7 +15,6 @@ import org.formation.model.CompteCourant;
 import org.formation.model.CompteEpargne;
 
 @Named
-@SessionScoped
 public class DaoCompte implements IDaoCompte {
 
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("my-pu");

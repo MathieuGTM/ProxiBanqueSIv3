@@ -18,9 +18,7 @@ import javax.persistence.OneToOne;
 @ManagedBean
 public class Client extends Personne implements Serializable{
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	
 
@@ -132,8 +130,9 @@ public class Client extends Personne implements Serializable{
 	public String toString() {
 		return "Client [adresse=" + adresse + ", clientFortune=" + clientFortune + ", typeClient=" + typeClient
 				+ ", compteCourant=" + compteCourant + ", compteEpargne=" + compteEpargne + ", conseiller=" + conseiller
-				+ ", cb=" + cb + "]";
+				+ ", cb=" + cb + ", getNom()=" + getNom() + ", getPrenom()=" + getPrenom() + "]";
 	}
+
 
 	
 	

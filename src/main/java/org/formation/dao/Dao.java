@@ -124,6 +124,7 @@ public class Dao<T> implements IDao<T>{
 			etxn.begin();
 			TypedQuery<T> query = em.createQuery(sql, t);
 			list = query.getResultList();
+			System.out.println(list+" from DAO !!!!!!!!!!");
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
@@ -152,6 +153,8 @@ public class Dao<T> implements IDao<T>{
 			TypedQuery<Client> query = em.createQuery("from Client", Client.class);
 			list = query.getResultList();
 			System.out.println(list.size()+ "!!!!!!!!!!");
+			System.out.println(list+" from DAO !!!!!!!!!!");
+			System.out.println(list.get(0).getNom());
 			etxn.commit();
 		} catch (Exception e) {
 			if (etxn != null)
